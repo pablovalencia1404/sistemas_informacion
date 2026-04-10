@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="TechConsult — Contacta con nosotros. Te respondemos en menos de 24 horas." />
+  <title>Contacto | TechConsult</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar" id="navbar">
+    <div class="container navbar__inner">
+      <a href="index.html" class="navbar__logo">Tech<span>Consult</span></a>
+
+      <ul class="navbar__links">
+        <li><a href="index.html#inicio">Inicio</a></li>
+        <li><a href="index.html#servicios">Servicios</a></li>
+        <li><a href="index.html#nosotros">Nosotros</a></li>
+        <li><a href="index.html#testimonios">Testimonios</a></li>
+        <li><a href="contacto.html" aria-current="page">Contacto</a></li>
+      </ul>
+
+      <a href="contacto.html" class="btn btn-primary navbar__cta">Solicitar consulta</a>
+
+      <button class="navbar__toggle" aria-label="Abrir menú">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ===== PAGE HERO ===== -->
+  <header class="page-hero">
+    <div class="container">
+      <h1 class="page-hero__title">Hablemos de tu <span>proyecto</span></h1>
+      <p class="page-hero__subtitle">
+        Rellena el formulario y nos pondremos en contacto contigo en menos de 24 horas.
+      </p>
+    </div>
+  </header>
+
+  <!-- ===== CONTACT SECTION ===== -->
+  <section class="contact" id="contacto">
+    <div class="container">
+      <div class="contact__inner">
+
+        <!-- Contact info -->
+        <div>
+          <div class="contact__info-item">
+            <span class="contact__info-icon">📍</span>
+            <div>
+              <p class="contact__info-label">Dirección</p>
+              <p class="contact__info-value">Calle Tecnología 42, 28001 Madrid</p>
+            </div>
+          </div>
+          <div class="contact__info-item">
+            <span class="contact__info-icon">📞</span>
+            <div>
+              <p class="contact__info-label">Teléfono</p>
+              <p class="contact__info-value">+34 900 123 456</p>
+            </div>
+          </div>
+          <div class="contact__info-item">
+            <span class="contact__info-icon">✉️</span>
+            <div>
+              <p class="contact__info-label">Email</p>
+              <p class="contact__info-value">info@techconsult.es</p>
+            </div>
+          </div>
+          <div class="contact__info-item">
+            <span class="contact__info-icon">🕐</span>
+            <div>
+              <p class="contact__info-label">Horario</p>
+              <p class="contact__info-value">Lun–Vie: 9:00–19:00 | Soporte 24/7</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact form -->
+        <form class="contact__form" id="contactForm" novalidate>
+          <div class="form-group">
+            <label for="nombre">Nombre *</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Tu nombre completo" />
+          </div>
+          <div class="form-group">
+            <label for="email">Correo electrónico *</label>
+            <input type="email" id="email" name="email" placeholder="tu@empresa.com" />
+          </div>
+          <div class="form-group">
+            <label for="asunto">Asunto *</label>
+            <input type="text" id="asunto" name="asunto" placeholder="¿En qué podemos ayudarte?" />
+          </div>
+          <div class="form-group">
+            <label for="mensaje">Mensaje *</label>
+            <textarea id="mensaje" name="mensaje" placeholder="Cuéntanos los detalles de tu proyecto…"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width:100%;font-size:1rem;">
+            Enviar mensaje
+          </button>
+        </form>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer__brand">
+          <a href="index.html" class="navbar__logo">Tech<span>Consult</span></a>
+          <p>
+            Asesoría informática profesional para empresas y autónomos.
+            Transformamos la tecnología en ventaja competitiva.
+          </p>
+        </div>
+
+        <div>
+          <p class="footer__heading">Servicios</p>
+          <ul class="footer__links">
+            <li><a href="index.html#servicios">Ciberseguridad</a></li>
+            <li><a href="index.html#servicios">Cloud &amp; Hosting</a></li>
+            <li><a href="index.html#servicios">Soporte técnico</a></li>
+            <li><a href="index.html#servicios">Desarrollo de software</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <p class="footer__heading">Empresa</p>
+          <ul class="footer__links">
+            <li><a href="index.html#nosotros">Nosotros</a></li>
+            <li><a href="index.html#testimonios">Testimonios</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p>&copy; 2024 TechConsult. Todos los derechos reservados.</p>
+        <p>Práctica 2 — Sistemas de Información</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // ===== CONTACT FORM VALIDATION =====
+    (function () {
+      var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+      document.getElementById('contactForm').addEventListener('submit', function (e) {
+        e.preventDefault();
+        e.stopImmediatePropagation();
+
+        var nombre  = document.getElementById('nombre');
+        var email   = document.getElementById('email');
+        var asunto  = document.getElementById('asunto');
+        var mensaje = document.getElementById('mensaje');
+
+        // Clear previous error state
+        document.querySelectorAll('.form-error').forEach(function (el) { el.remove(); });
+        [nombre, email, asunto, mensaje].forEach(function (el) { el.classList.remove('input-error'); });
+
+        var isValid = true;
+
+        function showError(input, msg) {
+          input.classList.add('input-error');
+          var span = document.createElement('span');
+          span.className = 'form-error';
+          span.textContent = msg;
+          input.parentNode.appendChild(span);
+          isValid = false;
+        }
+
+        if (!nombre.value.trim()) {
+          showError(nombre, 'El nombre es obligatorio.');
+        }
+
+        if (!email.value.trim()) {
+          showError(email, 'El correo electrónico es obligatorio.');
+        } else if (!emailRegex.test(email.value.trim())) {
+          showError(email, 'Introduce un correo electrónico válido.');
+        }
+
+        if (!asunto.value.trim()) {
+          showError(asunto, 'El asunto es obligatorio.');
+        }
+
+        if (!mensaje.value.trim()) {
+          showError(mensaje, 'El mensaje es obligatorio.');
+        }
+
+        if (isValid) {
+          var form = document.getElementById('contactForm');
+          form.innerHTML = '<div class="form-success">✅ ¡Mensaje enviado correctamente! Nos pondremos en contacto contigo en breve.</div>';
+        }
+      });
+    })();
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>
